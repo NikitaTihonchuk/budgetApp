@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BillViewController" customModule="BudgetApp" customModuleProvider="target">
             <connections>
                 <outlet property="counterLabel" destination="8Nb-4e-vg3" id="LNW-ou-JMq"/>
+                <outlet property="sheetButton" destination="cRa-0P-e7B" id="2vd-c4-ImQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

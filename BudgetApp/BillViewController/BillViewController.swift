@@ -11,10 +11,12 @@ class BillViewController: UIViewController {
 
     @IBOutlet weak var counterLabel: UILabel!
     
+    @IBOutlet weak var sheetButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        sheetButton.layer.masksToBounds = true
+        sheetButton.layer.cornerRadius = 35
     }
 
     
