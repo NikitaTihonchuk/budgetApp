@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCategoryViewController" customModule="BudgetApp" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wca-Bu-FWY">
+                    <rect key="frame" x="16" y="75" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Hhx-sL-UX4"/>
+                        <constraint firstAttribute="height" constant="40" id="w1g-a0-gqp"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="delete.left" catalog="system"/>
+                    <connections>
+                        <action selector="deleteSheetController:" destination="-1" eventType="touchUpInside" id="Qfi-Ec-2HI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3N-qg-N2h">
+                    <rect key="frame" x="317" y="75" width="60" height="40"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
+                    <connections>
+                        <action selector="makeYourCategory:" destination="-1" eventType="touchUpInside" id="b85-WM-CCz"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите группу" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btw-w8-IN4">
+                    <rect key="frame" x="125.66666666666669" y="85" width="142" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="t3N-qg-N2h" secondAttribute="trailing" constant="16" id="6h9-hf-wl5"/>
+                <constraint firstItem="t3N-qg-N2h" firstAttribute="width" secondItem="wca-Bu-FWY" secondAttribute="width" multiplier="1.5" id="IMI-Qs-QcR"/>
+                <constraint firstItem="wca-Bu-FWY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Npu-Bj-W0r"/>
+                <constraint firstItem="btw-w8-IN4" firstAttribute="centerY" secondItem="wca-Bu-FWY" secondAttribute="centerY" id="ZuL-a7-CPm"/>
+                <constraint firstItem="t3N-qg-N2h" firstAttribute="centerY" secondItem="wca-Bu-FWY" secondAttribute="centerY" id="aKA-uP-Y8b"/>
+                <constraint firstItem="wca-Bu-FWY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="cmD-j9-NRU"/>
+                <constraint firstItem="t3N-qg-N2h" firstAttribute="height" secondItem="wca-Bu-FWY" secondAttribute="height" id="gz6-p8-xWL"/>
+                <constraint firstItem="btw-w8-IN4" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="tt5-XT-Vy2"/>
+            </constraints>
+            <point key="canvasLocation" x="57.251908396946561" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="delete.left" catalog="system" width="128" height="102"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
