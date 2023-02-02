@@ -16,6 +16,11 @@
 		11D71598298C1AA800C07D57 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D71597298C1AA800C07D57 /* TabBarController.swift */; };
 		11D7159C298C293100C07D57 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7159A298C293100C07D57 /* AddCategoryViewController.swift */; };
 		11D7159D298C293100C07D57 /* AddCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D7159B298C293100C07D57 /* AddCategoryViewController.xib */; };
+		11D715A1298C308400C07D57 /* AddCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7159F298C308400C07D57 /* AddCategoryCollectionViewCell.swift */; };
+		11D715A2298C308400C07D57 /* AddCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D715A0298C308400C07D57 /* AddCategoryCollectionViewCell.xib */; };
+		11D715A6298C3E3000C07D57 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D715A4298C3E3000C07D57 /* TableViewCell.swift */; };
+		11D715A7298C3E3000C07D57 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D715A5298C3E3000C07D57 /* TableViewCell.xib */; };
+		11D715AA298C57E200C07D57 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D715A9298C57E200C07D57 /* RealmManager.swift */; };
 		11E99CC4298C18460072D357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E99CC3298C18460072D357 /* AppDelegate.swift */; };
 		11E99CC6298C18460072D357 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E99CC5298C18460072D357 /* SceneDelegate.swift */; };
 		11E99CCD298C184B0072D357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E99CCC298C184B0072D357 /* Assets.xcassets */; };
@@ -32,6 +37,11 @@
 		11D71597298C1AA800C07D57 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		11D7159A298C293100C07D57 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		11D7159B298C293100C07D57 /* AddCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCategoryViewController.xib; sourceTree = "<group>"; };
+		11D7159F298C308400C07D57 /* AddCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		11D715A0298C308400C07D57 /* AddCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		11D715A4298C3E3000C07D57 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		11D715A5298C3E3000C07D57 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		11D715A9298C57E200C07D57 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		11E99CC0298C18460072D357 /* BudgetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E99CC3298C18460072D357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11E99CC5298C18460072D357 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +64,7 @@
 		11D71587298C1A0400C07D57 /* AddViewController */ = {
 			isa = PBXGroup;
 			children = (
+				11D715A3298C3E1500C07D57 /* TableViewCell */,
 				11D7158A298C1A3400C07D57 /* AddViewController.swift */,
 				11D7158B298C1A3400C07D57 /* AddViewController.xib */,
 			);
@@ -95,6 +106,32 @@
 			path = AddCategoryViewController;
 			sourceTree = "<group>";
 		};
+		11D7159E298C305600C07D57 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				11D7159F298C308400C07D57 /* AddCategoryCollectionViewCell.swift */,
+				11D715A0298C308400C07D57 /* AddCategoryCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		11D715A3298C3E1500C07D57 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				11D715A4298C3E3000C07D57 /* TableViewCell.swift */,
+				11D715A5298C3E3000C07D57 /* TableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		11D715A8298C57C300C07D57 /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				11D715A9298C57E200C07D57 /* RealmManager.swift */,
+			);
+			path = RealmManager;
+			sourceTree = "<group>";
+		};
 		11E99CB7298C18460072D357 = {
 			isa = PBXGroup;
 			children = (
@@ -114,8 +151,10 @@
 		11E99CC2298C18460072D357 /* BudgetApp */ = {
 			isa = PBXGroup;
 			children = (
-				11D71599298C291600C07D57 /* AddCategoryViewController */,
 				11D71596298C1A5700C07D57 /* TabBarController */,
+				11D715A8298C57C300C07D57 /* RealmManager */,
+				11D7159E298C305600C07D57 /* Cells */,
+				11D71599298C291600C07D57 /* AddCategoryViewController */,
 				11D71589298C1A1C00C07D57 /* BillViewController */,
 				11D71588298C1A1100C07D57 /* AnalyticsViewController */,
 				11D71587298C1A0400C07D57 /* AddViewController */,
@@ -186,10 +225,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11D715A2298C308400C07D57 /* AddCategoryCollectionViewCell.xib in Resources */,
 				11D7158D298C1A3400C07D57 /* AddViewController.xib in Resources */,
 				11E99CD0298C184B0072D357 /* LaunchScreen.storyboard in Resources */,
 				11D7159D298C293100C07D57 /* AddCategoryViewController.xib in Resources */,
 				11E99CCD298C184B0072D357 /* Assets.xcassets in Resources */,
+				11D715A7298C3E3000C07D57 /* TableViewCell.xib in Resources */,
 				11D71591298C1A4600C07D57 /* AnalyticsViewController.xib in Resources */,
 				11D71595298C1A4E00C07D57 /* BillViewController.xib in Resources */,
 			);
@@ -205,8 +246,11 @@
 				11E99CC4298C18460072D357 /* AppDelegate.swift in Sources */,
 				11E99CC6298C18460072D357 /* SceneDelegate.swift in Sources */,
 				11D71594298C1A4E00C07D57 /* BillViewController.swift in Sources */,
+				11D715A6298C3E3000C07D57 /* TableViewCell.swift in Sources */,
 				11D71598298C1AA800C07D57 /* TabBarController.swift in Sources */,
+				11D715A1298C308400C07D57 /* AddCategoryCollectionViewCell.swift in Sources */,
 				11D7158C298C1A3400C07D57 /* AddViewController.swift in Sources */,
+				11D715AA298C57E200C07D57 /* RealmManager.swift in Sources */,
 				11D7159C298C293100C07D57 /* AddCategoryViewController.swift in Sources */,
 				11D71590298C1A4600C07D57 /* AnalyticsViewController.swift in Sources */,
 			);
