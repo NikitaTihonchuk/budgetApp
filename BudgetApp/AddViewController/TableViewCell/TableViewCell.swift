@@ -9,15 +9,20 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     static let id = String(describing: TableViewCell.self)
+    
+    @IBOutlet weak var currencyImage: UIImageView!
+    @IBOutlet weak var currencyName: UILabel!
+    @IBOutlet weak var currencySum: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func set(model: CurrencyRealmModel) {
+        currencyImage.image = UIImage(systemName: model.image)!
+        currencyName.text = model.name
+        currencySum.text = String(model.sum)
     }
     
 }

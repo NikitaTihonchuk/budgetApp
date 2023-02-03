@@ -20,8 +20,9 @@ class BillViewController: UIViewController {
     }
 
     
-    func showMyViewControllerInACustomizedSheet() {
+   private func showMyViewControllerInACustomizedSheet() {
         let viewControllerToPresent = AddCategoryViewController(nibName: "AddCategoryViewController", bundle: nil)
+       viewControllerToPresent.number = counterLabel.text!
         if let sheet = viewControllerToPresent.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
             sheet.largestUndimmedDetentIdentifier = .medium

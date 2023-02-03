@@ -10,13 +10,9 @@ import UIKit
 class AddCategoryViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    let arrayImage: [UIImage] = [UIImage(systemName: "eurosign.circle.fill")!,
-                                 UIImage(systemName: "dollarsign.circle.fill")!,
-                                 UIImage(systemName: "tengesign.circle.fill")!,
-                                 UIImage(systemName: "bitcoinsign.circle.fill")!,
-                                 UIImage(systemName: "rublesign.circle.fill")!,
-                                 UIImage(systemName: "parkingsign.circle.fill")!]
+    var number = ""
+    let currencyArray: [CurrencyRealmModel] = RealmManager<CurrencyRealmModel>().read()
+    var closure: ((CurrencyRealmModel, String) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,12 +42,22 @@ class AddCategoryViewController: UIViewController {
 
 extension AddCategoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let currency = currencyArray[indexPath.row - 1]
+        let changeCurrency = currencyArray.filter { $0.name == currency.name }.first
+        RealmManager<CurrencyRealmModel>().update { realm in
+            try? realm.write({
+                changeCurrency?.sum = currency.sum + Int(self.number)!
+            })
+        }
+        navigationController?.dismiss(animated: true)
+        }
     }
-}
+
  
 extension AddCategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayImage.count + 1
+        return currencyArray.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,7 +70,7 @@ extension AddCategoryViewController: UICollectionViewDataSource {
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddCategoryCollectionViewCell.id, for: indexPath)
             guard let currencyCell = cell as? AddCategoryCollectionViewCell else { return cell }
-            currencyCell.set(image: arrayImage[indexPath.row - 1])
+            currencyCell.set(image: UIImage(systemName: currencyArray[indexPath.row - 1].image)!)
             //currencyCell.backgroundImage.image?.withTintColor(.black)
             return currencyCell
         }

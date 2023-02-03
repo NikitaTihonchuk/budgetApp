@@ -21,13 +21,18 @@
 		11D715A6298C3E3000C07D57 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D715A4298C3E3000C07D57 /* TableViewCell.swift */; };
 		11D715A7298C3E3000C07D57 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D715A5298C3E3000C07D57 /* TableViewCell.xib */; };
 		11D715AA298C57E200C07D57 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D715A9298C57E200C07D57 /* RealmManager.swift */; };
+		11D715AD298C5ACA00C07D57 /* CurrencyRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D715AC298C5ACA00C07D57 /* CurrencyRealmModel.swift */; };
+		11D715AF298C645700C07D57 /* ReplenishmentRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D715AE298C645700C07D57 /* ReplenishmentRealmModel.swift */; };
+		11D715B2298D0D7900C07D57 /* CurrencyEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D715B1298D0D7900C07D57 /* CurrencyEnum.swift */; };
 		11E99CC4298C18460072D357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E99CC3298C18460072D357 /* AppDelegate.swift */; };
 		11E99CC6298C18460072D357 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E99CC5298C18460072D357 /* SceneDelegate.swift */; };
 		11E99CCD298C184B0072D357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E99CCC298C184B0072D357 /* Assets.xcassets */; };
 		11E99CD0298C184B0072D357 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E99CCE298C184B0072D357 /* LaunchScreen.storyboard */; };
+		148671BABEC481F84D33E6FE /* Pods_BudgetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E8F96415F4390ECEF2E01 /* Pods_BudgetApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		000B45AF809ECFC4D5BB274A /* Pods-BudgetApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetApp.debug.xcconfig"; path = "Target Support Files/Pods-BudgetApp/Pods-BudgetApp.debug.xcconfig"; sourceTree = "<group>"; };
 		11D7158A298C1A3400C07D57 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		11D7158B298C1A3400C07D57 /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
 		11D7158E298C1A4600C07D57 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
@@ -42,12 +47,17 @@
 		11D715A4298C3E3000C07D57 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		11D715A5298C3E3000C07D57 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		11D715A9298C57E200C07D57 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		11D715AC298C5ACA00C07D57 /* CurrencyRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRealmModel.swift; sourceTree = "<group>"; };
+		11D715AE298C645700C07D57 /* ReplenishmentRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplenishmentRealmModel.swift; sourceTree = "<group>"; };
+		11D715B1298D0D7900C07D57 /* CurrencyEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyEnum.swift; sourceTree = "<group>"; };
 		11E99CC0298C18460072D357 /* BudgetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E99CC3298C18460072D357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11E99CC5298C18460072D357 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		11E99CCC298C184B0072D357 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11E99CCF298C184B0072D357 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11E99CD1298C184B0072D357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		822E8F96415F4390ECEF2E01 /* Pods_BudgetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BudgetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1A845FC6D7D4E11ABEB5B2 /* Pods-BudgetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BudgetApp.release.xcconfig"; path = "Target Support Files/Pods-BudgetApp/Pods-BudgetApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				148671BABEC481F84D33E6FE /* Pods_BudgetApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,11 +143,30 @@
 			path = RealmManager;
 			sourceTree = "<group>";
 		};
+		11D715AB298C5AB000C07D57 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11D715AC298C5ACA00C07D57 /* CurrencyRealmModel.swift */,
+				11D715AE298C645700C07D57 /* ReplenishmentRealmModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11D715B0298D0D5200C07D57 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				11D715B1298D0D7900C07D57 /* CurrencyEnum.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		11E99CB7298C18460072D357 = {
 			isa = PBXGroup;
 			children = (
 				11E99CC2298C18460072D357 /* BudgetApp */,
 				11E99CC1298C18460072D357 /* Products */,
+				2117F3A3D8976408C9AAB9EF /* Pods */,
+				BD49A38223AD529EA2A8A7CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +181,8 @@
 		11E99CC2298C18460072D357 /* BudgetApp */ = {
 			isa = PBXGroup;
 			children = (
+				11D715B0298D0D5200C07D57 /* Enums */,
+				11D715AB298C5AB000C07D57 /* Models */,
 				11D71596298C1A5700C07D57 /* TabBarController */,
 				11D715A8298C57C300C07D57 /* RealmManager */,
 				11D7159E298C305600C07D57 /* Cells */,
@@ -167,6 +199,23 @@
 			path = BudgetApp;
 			sourceTree = "<group>";
 		};
+		2117F3A3D8976408C9AAB9EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				000B45AF809ECFC4D5BB274A /* Pods-BudgetApp.debug.xcconfig */,
+				AF1A845FC6D7D4E11ABEB5B2 /* Pods-BudgetApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD49A38223AD529EA2A8A7CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				822E8F96415F4390ECEF2E01 /* Pods_BudgetApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,9 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11E99CD4298C184B0072D357 /* Build configuration list for PBXNativeTarget "BudgetApp" */;
 			buildPhases = (
+				2721B62BF799DEBBF709C732 /* [CP] Check Pods Manifest.lock */,
 				11E99CBC298C18460072D357 /* Sources */,
 				11E99CBD298C18460072D357 /* Frameworks */,
 				11E99CBE298C18460072D357 /* Resources */,
+				3ABB17A28E8123AF803BCC02 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,12 +289,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2721B62BF799DEBBF709C732 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BudgetApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3ABB17A28E8123AF803BCC02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BudgetApp/Pods-BudgetApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BudgetApp/Pods-BudgetApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BudgetApp/Pods-BudgetApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		11E99CBC298C18460072D357 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11D715AF298C645700C07D57 /* ReplenishmentRealmModel.swift in Sources */,
+				11D715B2298D0D7900C07D57 /* CurrencyEnum.swift in Sources */,
 				11E99CC4298C18460072D357 /* AppDelegate.swift in Sources */,
+				11D715AD298C5ACA00C07D57 /* CurrencyRealmModel.swift in Sources */,
 				11E99CC6298C18460072D357 /* SceneDelegate.swift in Sources */,
 				11D71594298C1A4E00C07D57 /* BillViewController.swift in Sources */,
 				11D715A6298C3E3000C07D57 /* TableViewCell.swift in Sources */,
@@ -386,6 +482,7 @@
 		};
 		11E99CD5298C184B0072D357 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 000B45AF809ECFC4D5BB274A /* Pods-BudgetApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -413,6 +510,7 @@
 		};
 		11E99CD6298C184B0072D357 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF1A845FC6D7D4E11ABEB5B2 /* Pods-BudgetApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
