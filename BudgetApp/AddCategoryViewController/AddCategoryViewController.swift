@@ -12,7 +12,7 @@ class AddCategoryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var number = ""
     let currencyArray: [CurrencyRealmModel] = RealmManager<CurrencyRealmModel>().read()
-    var closure: ((CurrencyRealmModel, String) -> ())?
+    var closure: ((String) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,9 @@ extension AddCategoryViewController: UICollectionViewDelegate {
                 changeCurrency?.sum = currency.sum + Int(self.number)!
             })
         }
-        navigationController?.dismiss(animated: true)
+        closure?("0")
+        dismiss(animated: true, completion: nil)
+        
         }
     }
 

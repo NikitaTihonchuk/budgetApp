@@ -14,10 +14,10 @@ class AddViewController: UIViewController {
     var currencyArray = RealmManager<CurrencyRealmModel>().read()
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let vc = AddCategoryViewController(nibName: "AddCategoryViewController", bundle: nil)
+        title = "Ваши сбережения"
+        navigationController?.navigationBar.prefersLargeTitles = true
         addToRealm()
         registerCell()
-        //tableView.delegate = self
         tableView.dataSource = self
     }
     

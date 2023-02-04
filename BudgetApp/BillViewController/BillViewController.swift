@@ -18,6 +18,10 @@ class BillViewController: UIViewController {
         sheetButton.layer.masksToBounds = true
         sheetButton.layer.cornerRadius = 35
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        counterLabel.text = "0"
+    }
 
     
    private func showMyViewControllerInACustomizedSheet() {
