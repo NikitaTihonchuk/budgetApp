@@ -19,6 +19,7 @@ class AddViewController: UIViewController {
         addToRealm()
         registerCell()
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,14 +38,7 @@ class AddViewController: UIViewController {
             }
         }
     }
-    /*[UIImage(systemName: "eurosign.circle.fill")!,
-                             UIImage(systemName: "dollarsign.circle.fill")!,
-                             UIImage(systemName: "tengesign.circle.fill")!,
-                             UIImage(systemName: "bitcoinsign.circle.fill")!,
-                             UIImage(systemName: "rublesign.circle.fill")!,
-                             UIImage(systemName: "parkingsign.circle.fill")!]*/
-
-
+   
     private func registerCell() {
         let nib = UINib(nibName: TableViewCell.id, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: TableViewCell.id)
@@ -63,6 +57,10 @@ extension AddViewController: UITableViewDataSource {
         currencyCell.set(model: currencyArray[indexPath.row])
         return currencyCell
     }
-    
-    
+}
+
+extension AddViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currency = currencyArray[indexPath.row]
+    }
 }

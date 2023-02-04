@@ -10,7 +10,6 @@ import UIKit
 class BillViewController: UIViewController {
 
     @IBOutlet weak var counterLabel: UILabel!
-    
     @IBOutlet weak var sheetButton: UIButton!
     
     override func viewDidLoad() {
@@ -18,23 +17,24 @@ class BillViewController: UIViewController {
         sheetButton.layer.masksToBounds = true
         sheetButton.layer.cornerRadius = 35
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        counterLabel.text = "0"
-    }
 
     
    private func showMyViewControllerInACustomizedSheet() {
         let viewControllerToPresent = AddCategoryViewController(nibName: "AddCategoryViewController", bundle: nil)
        viewControllerToPresent.number = counterLabel.text!
-        if let sheet = viewControllerToPresent.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-            sheet.largestUndimmedDetentIdentifier = .medium
-            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+       if let sheet = viewControllerToPresent.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.preferredCornerRadius = 50
+            //sheet.largestUndimmedDetentIdentifier = .large
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = true
             sheet.prefersEdgeAttachedInCompactHeight = true
             sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
         }
-        present(viewControllerToPresent, animated: true, completion: nil)
+       viewControllerToPresent.definesPresentationContext = true
+       viewControllerToPresent.providesPresentationContextTransitionStyle = true
+        viewControllerToPresent.modalPresentationStyle = .overCurrentContext
+       present(viewControllerToPresent, animated: true, completion: nil)
+       counterLabel.text = "0"
     }
     
     

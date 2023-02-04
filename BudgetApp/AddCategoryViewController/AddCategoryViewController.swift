@@ -12,7 +12,7 @@ class AddCategoryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var number = ""
     let currencyArray: [CurrencyRealmModel] = RealmManager<CurrencyRealmModel>().read()
-    var closure: ((String) -> ())?
+    var closure: ((CurrencyRealmModel, String) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,8 @@ class AddCategoryViewController: UIViewController {
    
     
     @IBAction func deleteSheetController(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+
     }
     
     
@@ -50,9 +52,9 @@ extension AddCategoryViewController: UICollectionViewDelegate {
                 changeCurrency?.sum = currency.sum + Int(self.number)!
             })
         }
-        closure?("0")
-        dismiss(animated: true, completion: nil)
+        //navigationController?.popViewController(animated: true)
         
+        dismiss(animated: true, completion: nil)
         }
     }
 
