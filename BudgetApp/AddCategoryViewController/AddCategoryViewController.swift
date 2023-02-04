@@ -33,7 +33,6 @@ class AddCategoryViewController: UIViewController {
     
     @IBAction func deleteSheetController(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
-
     }
     
     
@@ -47,11 +46,16 @@ extension AddCategoryViewController: UICollectionViewDelegate {
         
         let currency = currencyArray[indexPath.row - 1]
         let changeCurrency = currencyArray.filter { $0.name == currency.name }.first
+        guard let changeCurrency else { return }
+        print(currency.sum)
+        let transaction = ReplenishmentRealmModel(count: Int(number)!, ownerID: changeCurrency.id)
+        RealmManager<ReplenishmentRealmModel>().write(object: transaction)
         RealmManager<CurrencyRealmModel>().update { realm in
             try? realm.write({
-                changeCurrency?.sum = currency.sum + Int(self.number)!
+                changeCurrency.sum = currency.sum + Int(self.number)!
             })
         }
+        
         //navigationController?.popViewController(animated: true)
         
         dismiss(animated: true, completion: nil)
