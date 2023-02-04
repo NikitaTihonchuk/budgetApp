@@ -10,12 +10,14 @@ import UIKit
 class AddViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
     let arrayOfCur = [CurrencyRealmModel]()
+    var id = ""
     var currencyArray = RealmManager<CurrencyRealmModel>().read()
     override func viewDidLoad() {
         super.viewDidLoad()
+        //navigationController?.navigationBar.prefersLargeTitles = true
         title = "Ваши сбережения"
-        navigationController?.navigationBar.prefersLargeTitles = true
         addToRealm()
         registerCell()
         tableView.dataSource = self
@@ -62,5 +64,8 @@ extension AddViewController: UITableViewDataSource {
 extension AddViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currency = currencyArray[indexPath.row]
+        let vc = AdditionalInfoCurrencyViewController(nibName: "AdditionalInfoCurrencyViewController", bundle: nil)
+        vc.model = currency
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
