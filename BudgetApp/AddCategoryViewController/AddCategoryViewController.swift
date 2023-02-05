@@ -7,12 +7,11 @@
 
 import UIKit
 
-class AddCategoryViewController: UIViewController {
+final class AddCategoryViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var number = ""
-    let currencyArray: [CurrencyRealmModel] = RealmManager<CurrencyRealmModel>().read()
-    var closure: ((CurrencyRealmModel, String) -> ())?
+    private var currencyArray: [CurrencyRealmModel] = RealmManager<CurrencyRealmModel>().read()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +36,12 @@ class AddCategoryViewController: UIViewController {
     
     
     @IBAction func makeYourCategory(_ sender: UIButton) {
+        let vc = AddNewCurrencyViewController(nibName: "AddNewCurrencyViewController", bundle: nil)
+        present(vc, animated: true)
+        vc.completionHandler = { [weak self] in
+            self?.currencyArray = RealmManager<CurrencyRealmModel>().read()
+            self?.collectionView.reloadData()
+        }
     }
     
 }
@@ -44,8 +49,8 @@ class AddCategoryViewController: UIViewController {
 extension AddCategoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let currency = currencyArray[indexPath.row - 1]
-         let changeCurrency = currencyArray.filter { $0.name == currency.name }.first
+        let currency = currencyArray[indexPath.row]
+        let changeCurrency = currencyArray.filter { $0.name == currency.name }.first
         guard let changeCurrency else { return }
         print(currency.sum)
         let transaction = ReplenishmentRealmModel(count: Int(number)!, ownerID: changeCurrency.id)
@@ -56,36 +61,25 @@ extension AddCategoryViewController: UICollectionViewDelegate {
                 changeCurrency.sum = currency.sum + Int(self.number)!
             })
         }
-        
-        //navigationController?.popViewController(animated: true)
-        
         dismiss(animated: true, completion: nil)
-        }
     }
+}
 
  
 extension AddCategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return currencyArray.count + 1
+        return currencyArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.row {
-            case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddCategoryCollectionViewCell.id, for: indexPath)
             guard let currencyCell = cell as? AddCategoryCollectionViewCell else { return cell }
-            currencyCell.set(image: UIImage(systemName: "plus.circle.fill")!.withTintColor(.black))
-            return currencyCell
-        default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddCategoryCollectionViewCell.id, for: indexPath)
-            guard let currencyCell = cell as? AddCategoryCollectionViewCell else { return cell }
-            currencyCell.set(image: UIImage(systemName: currencyArray[indexPath.row - 1].image)!)
-            //currencyCell.backgroundImage.image?.withTintColor(.black)
+            currencyCell.set(image: UIImage(systemName: currencyArray[indexPath.row].image)!)
             return currencyCell
         }
         
     }
-}
+
 
 extension AddCategoryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

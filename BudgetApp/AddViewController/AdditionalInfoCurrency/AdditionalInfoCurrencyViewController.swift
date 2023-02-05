@@ -7,12 +7,12 @@
 
 import UIKit
 
-class AdditionalInfoCurrencyViewController: UIViewController {
+final class AdditionalInfoCurrencyViewController: UIViewController {
 
     @IBOutlet weak var nameCurrency: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var replenishmentArray = [ReplenishmentRealmModel]() {
+    private var replenishmentArray = [ReplenishmentRealmModel]() {
         didSet {
             tableView.reloadData()
         }

@@ -218,7 +218,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemGray4Color"/>
+            <color key="backgroundColor" red="0.72185506375385167" green="0.75276624195024233" blue="0.83748632669448853" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="cRa-0P-e7B" firstAttribute="top" secondItem="H62-zV-ezD" secondAttribute="bottom" constant="16" id="48m-Mc-Qoz"/>
                 <constraint firstItem="0IM-FF-791" firstAttribute="height" secondItem="8Nb-4e-vg3" secondAttribute="height" multiplier="0.7" id="B1i-86-4PH"/>
@@ -240,9 +240,6 @@
         <image name="delete.backward.fill" catalog="system" width="128" height="102"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

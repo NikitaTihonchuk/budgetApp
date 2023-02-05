@@ -10,21 +10,20 @@ import Charts
 class AnalyticsViewController: UIViewController {
 
    
-    let currency = RealmManager<CurrencyRealmModel>().read()
     
     @IBOutlet weak var pieChartView: PieChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Аналитика"
-       // customizeChart(dataPoints: currency)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        let currency = RealmManager<CurrencyRealmModel>().read()
         customizeChart(dataPoints: currency)
     }
     
-    func customizeChart(dataPoints: [CurrencyRealmModel]) {
+    private func customizeChart(dataPoints: [CurrencyRealmModel]) {
         var dataEntries: [ChartDataEntry] = []
           for eachCurrency in dataPoints {
               let dataEntry = PieChartDataEntry(value: Double(eachCurrency.sum), label: eachCurrency.name, data: eachCurrency.name as AnyObject)
@@ -53,14 +52,6 @@ class AnalyticsViewController: UIViewController {
         colors.append(color)
       }
       return colors
-    }
-    
-    func setupPieChart() {
-        pieChartView.drawHoleEnabled = false
-        pieChartView.rotationAngle = 0
-        pieChartView.rotationEnabled = false
-        pieChartView.isUserInteractionEnabled = false
-        //pieChartView.legend.enabled = false
     }
 
 }

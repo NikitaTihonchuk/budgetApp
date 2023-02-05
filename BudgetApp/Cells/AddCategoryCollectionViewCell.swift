@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddCategoryCollectionViewCell: UICollectionViewCell {
+final class AddCategoryCollectionViewCell: UICollectionViewCell {
 
     static let id = String(describing: AddCategoryCollectionViewCell.self)
     

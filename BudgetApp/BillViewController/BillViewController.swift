@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BillViewController: UIViewController {
+final class BillViewController: UIViewController {
 
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var sheetButton: UIButton!
