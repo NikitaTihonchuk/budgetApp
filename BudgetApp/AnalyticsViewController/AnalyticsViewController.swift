@@ -9,8 +9,6 @@ import UIKit
 import Charts
 class AnalyticsViewController: UIViewController {
 
-   
-    
     @IBOutlet weak var pieChartView: PieChartView!
     
     override func viewDidLoad() {
@@ -29,16 +27,13 @@ class AnalyticsViewController: UIViewController {
               let dataEntry = PieChartDataEntry(value: Double(eachCurrency.sum), label: eachCurrency.name, data: eachCurrency.name as AnyObject)
             dataEntries.append(dataEntry)
           }
-          // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: "")
           pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataPoints.count)
-          // 3. Set ChartData
           let pieChartData = PieChartData(dataSet: pieChartDataSet)
           let format = NumberFormatter()
           format.numberStyle = .none
           let formatter = DefaultValueFormatter(formatter: format)
           pieChartData.setValueFormatter(formatter)
-          // 4. Assign it to the chart’s data
           pieChartView.data = pieChartData
     }
     
