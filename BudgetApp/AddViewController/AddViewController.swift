@@ -10,7 +10,6 @@ import UIKit
 class AddViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
     let arrayOfCur = [CurrencyRealmModel]()
     var id = ""
     var currencyArray = RealmManager<CurrencyRealmModel>().read()
@@ -26,7 +25,12 @@ class AddViewController: UIViewController {
     }
     
     @objc func addTapped() {
-        print("hello")
+        let vc = AddNewCurrencyViewController(nibName: "AddNewCurrencyViewController", bundle: nil)
+        present(vc, animated: true)
+        vc.completionHandler = { [weak self] in
+            self?.currencyArray = RealmManager<CurrencyRealmModel>().read()
+            self?.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
