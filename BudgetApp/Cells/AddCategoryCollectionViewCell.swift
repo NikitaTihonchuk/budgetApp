@@ -15,7 +15,7 @@ class AddCategoryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        backgroundImage.image = UIImage(systemName: "smiley.fill")
     }
 
     func set(image: UIImage) {

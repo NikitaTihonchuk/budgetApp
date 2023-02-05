@@ -45,11 +45,12 @@ extension AddCategoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let currency = currencyArray[indexPath.row - 1]
-        let changeCurrency = currencyArray.filter { $0.name == currency.name }.first
+         let changeCurrency = currencyArray.filter { $0.name == currency.name }.first
         guard let changeCurrency else { return }
         print(currency.sum)
         let transaction = ReplenishmentRealmModel(count: Int(number)!, ownerID: changeCurrency.id)
         RealmManager<ReplenishmentRealmModel>().write(object: transaction)
+        
         RealmManager<CurrencyRealmModel>().update { realm in
             try? realm.write({
                 changeCurrency.sum = currency.sum + Int(self.number)!

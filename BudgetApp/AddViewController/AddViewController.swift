@@ -22,6 +22,11 @@ class AddViewController: UIViewController {
         registerCell()
         tableView.dataSource = self
         tableView.delegate = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addTapped))
+    }
+    
+    @objc func addTapped() {
+        print("hello")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,5 +72,18 @@ extension AddViewController: UITableViewDelegate {
         let vc = AdditionalInfoCurrencyViewController(nibName: "AdditionalInfoCurrencyViewController", bundle: nil)
         vc.model = currency
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let currency = currencyArray[indexPath.row]
+            RealmManager<CurrencyRealmModel>().delete(object: currency)
+            currencyArray = RealmManager<CurrencyRealmModel>().read()
+            tableView.reloadData()
+        }
     }
 }
